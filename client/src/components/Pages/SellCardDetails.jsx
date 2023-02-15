@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PlayerCard from "../PlayerCard/PlayerCard";
 import PlayerDetail from "../PlayerDetail/PlayerDetail";
 import { Container, Form, Button } from "react-bootstrap";
@@ -8,7 +8,7 @@ import { useAuthContext } from "../../context/auth/authContext";
 
 function SellCardDetails(props) {
   const [state, dispatch] = useAuthContext();
-  const history = useHistory();
+  const history = useNavigate();
   const data = history.location.state;
   const [price, setPrice] = useState(0);
   const [error, setError] = useState(null);

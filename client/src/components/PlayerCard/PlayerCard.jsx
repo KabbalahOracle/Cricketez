@@ -3,7 +3,7 @@ import { useState } from "react";
 import { fetchTokenDetails } from "../../api/playerMetadata";
 import { Card, Spinner, Button } from "react-bootstrap";
 import "./PlayerCard.css";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { teamColors } from "../../constants/teamColors";
 import { motion, AnimatePresence } from "framer-motion";
 import { LinkContainer } from "react-router-bootstrap";
@@ -11,7 +11,7 @@ import { LinkContainer } from "react-router-bootstrap";
 export default function PlayerCard(props) {
   const { data } = props;
   const [tokenDetails, setTokenDetails] = useState();
-  const histroy = useHistory();
+  const histroy = useNavigate();
 
   useEffect(() => {
     fetchTokenDetails(data.key).then((res) => setTokenDetails(res));
